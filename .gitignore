@@ -3,3 +3,11 @@
 ################################################################################
 
 /.vs/WebApiCore3.1WithSwagger/config/applicationhost.config
+/.vs/WebApiCore3.1WithSwagger/DesignTimeBuild/.dtbcache.v2
+/.vs/WebApiCore3.1WithSwagger/v16/TestStore/0/000.testlog
+/.vs/WebApiCore3.1WithSwagger/v16/TestStore/0/testlog.manifest
+/.vs/WebApiCore3.1WithSwagger/v16/.suo
+/WebApiCore3.1WithSwagger/obj
+/WebApiCore3.1WithSwaggerTest/obj
+/WebApiCore3Tests/obj
+/WebApiCore3Tests
