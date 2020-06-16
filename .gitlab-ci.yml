@@ -1,0 +1,43 @@
+## Build the docker file located in the projectfolder under the solution
+## Push the build docker image unter the project name
+
+
+
+image: docker:stable
+
+variables:
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+stages:
+  - build
+
+services:
+  - docker:dind
+before_script:
+  - docker info
+build:
+  variables:
+    DOCKER_HOST: tcp://docker:2375  #Cannot connect to the Docker daemon at tcp://docker:2375. Is the docker daemon running?
+
+  only:
+    - master
+  before_script:
+    - echo before_script section
+    - docker info
+    #Docker login
+
+  script:
+    - echo script section
+    # definition to the docker file location
+    # Todo Can we find that out from the solution in the path
+    - docker build .
+    # Push the files based on the CI Variables
+    #- docker push  WebApiCore3.1WithSwagger/WebApiCore3.1WithSwagger:latest
+  after_script:
+    - echo after_script section
+    # - docker logout ${CI_REGISTRY}
+
+  stage: build
+##  tags:
+##    - docker

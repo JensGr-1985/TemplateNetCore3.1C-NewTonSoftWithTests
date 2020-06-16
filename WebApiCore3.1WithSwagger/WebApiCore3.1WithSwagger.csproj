@@ -3,11 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>WebApiCore3._1WithSwagger</RootNamespace>
+	<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	<DockerfileContext>.</DockerfileContext>
+    <DockerfileFile>..\Dockerfile</DockerfileFile>    
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.3" />
+	<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
     <PackageReference Include="MySql.Data" Version="6.9.8" />
     <PackageReference Include="NSwag.AspNetCore" Version="13.4.2" />
     <PackageReference Include="NSwag.Core" Version="13.4.2" />
